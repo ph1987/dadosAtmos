@@ -1,0 +1,35 @@
+<div class="container container-align">
+    <app-header></app-header>
+    <div class="row justify-content-center main-box">
+        <h1 class="display-4">INEA - Dados do Monitoramento da Qualidade do Ar e Meteorologia</h1>
+        <div class="jumbotron vertical-center text-center">
+            <div class="nvbuttons">
+                <!-- <a class="btn btn-secondary btn-lg" routerLink="/inicial" routerLinkActive="active" role="button">
+                    <mat-icon aria-hidden="false" class="icon-align" aria-label="arrow_downward">arrow_back</mat-icon>
+                    &nbsp;Voltar
+                </a> -->
+                <div class="lead">
+                    <p>Selecione abaixo</p><br/>
+                    <p>o tipo de dados</p><br/>
+                    <p>que deseja consultar.</p>
+                        
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" routerLink="/anos-anteriores" routerLinkActive="active" role="button">
+                    <mat-icon aria-hidden="false" class="icon-align" aria-label="home">history</mat-icon>
+                     Dados de anos anteriores
+                </a>
+                &nbsp;
+                <a class="btn btn-primary btn-lg" routerLink="/ano-atual" routerLinkActive="active" role="button">
+                    <mat-icon aria-hidden="false" class="icon-align" aria-label="home">today</mat-icon>
+                    Dados deste ano
+                </a>
+            </p>
+        </div>
+    </div>  
+    <br/>
+    <app-footer></app-footer>
+</div>

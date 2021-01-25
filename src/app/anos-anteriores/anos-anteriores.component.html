@@ -1,0 +1,59 @@
+<div class="container container-align">
+    <app-header></app-header>
+    <div class="row justify-content-center main-box">
+        <h1 class="display-4">INEA - Dados do Monitoramento da Qualidade do Ar e Meteorologia</h1>
+        <div class="jumbotron vertical-center text-center">
+            <div class="nvbuttons">
+                <a class="btn btn-primary btn-lg" routerLink="/inicial" routerLinkActive="active" role="button">
+                    <mat-icon aria-hidden="false" class="icon-align" aria-label="home">home</mat-icon>
+                    &nbsp;Voltar para a tela inicial
+                </a>
+                &nbsp;
+                <mat-icon aria-hidden="false" class="icon-align" aria-label="keyboard_arrow_right" style="margin-top:10px;">keyboard_arrow_right</mat-icon>
+                &nbsp;<span style="font-size:20px;">Dados de anos anteriores</span>
+            </div>
+            <p class="lead">Meio século de dados da qualidade disponíveis para download: <br/>Os dados da rede <b>INEA</b> + os dados das empresas privadas,<br/> desde o ano de 1967.</p>
+            <hr class="my-4">
+            <div >
+                <mat-form-field appearance="fill">
+                    <mat-label style="font-size: 22px;">Selecione o ano</mat-label>
+                    <mat-select [(value)]="selected" style="font-size: 16px; padding-top: 12px;">
+                        <!-- <mat-option>None</mat-option> -->
+                        <mat-option value="2018">2018</mat-option>
+                        <mat-option value="2017">2017</mat-option>
+                        <mat-option value="2016">2016</mat-option>
+                        <mat-option value="2015">2015</mat-option>
+                        <mat-option value="2014">2014</mat-option>
+                        <mat-option value="2013">2013</mat-option>
+                        <mat-option value="2012">2012</mat-option>
+                        <mat-option value="2011">2011</mat-option>
+                        <mat-option value="2010">2010</mat-option>
+                        <mat-option value="2009">2009</mat-option>
+                        <mat-option value="2008">2008</mat-option>
+                        <mat-option value="2007">2007</mat-option>
+                        <mat-option value="2006">2006</mat-option>
+                        <mat-option value="2005">2005</mat-option>
+                        <mat-option value="2004">2004</mat-option>
+                        <mat-option value="2003">2003</mat-option>
+                        <mat-option value="2002">2002</mat-option>
+                        <mat-option value="2001">2001</mat-option>
+                        <mat-option value="2000">2000</mat-option>
+                        <mat-option value="1990-1999">1990-1999</mat-option>
+                        <mat-option value="1980-1989">1980-1989</mat-option>
+                        <mat-option value="1970-1979">1970-1979</mat-option>
+                        <mat-option value="1967-1969">1967-1969</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" (click)="downloadClick(selected)" routerLinkActive="active" role="button">
+                    <mat-icon aria-hidden="false" class="icon-align" aria-label="arrow_downward">arrow_downward</mat-icon>
+                    &nbsp;Download
+                </a>
+            </p>
+            <!-- <p>You selected: {{selected}}</p> -->
+        </div>
+    </div>  
+    <br/>
+    <app-footer></app-footer>
+</div>

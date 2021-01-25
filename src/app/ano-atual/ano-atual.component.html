@@ -1,0 +1,63 @@
+
+<div class="container container-align">
+    <app-header></app-header>
+    <div class="row justify-content-center main-box">
+        <h1 class="display-4">INEA - Dados do Monitoramento da Qualidade do Ar e Meteorologia</h1>
+        <div class="jumbotron vertical-center">
+            <div class="nvbuttons">
+                <a class="btn btn-primary btn-lg" routerLink="/inicial" routerLinkActive="active" role="button">
+                    <mat-icon aria-hidden="false" class="icon-align" aria-label="home">home</mat-icon>
+                    &nbsp;Voltar para a tela inicial
+                </a>
+                &nbsp;
+                <mat-icon aria-hidden="false" class="icon-align" aria-label="keyboard_arrow_right" style="margin-top:10px;">keyboard_arrow_right</mat-icon>
+                &nbsp;<span style="font-size:20px;">Dados deste ano</span>
+            </div>
+
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+              
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort>
+            
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                  </ng-container>
+            
+                  <ng-container matColumnDef="progress">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+                    <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                    <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="color">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+                    <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+                  </ng-container>
+              
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+                  <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                  </tr>
+                </table>
+              
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+            </div>
+        </div>
+
+        
+    </div>  
+    <br/>
+    <app-footer></app-footer>
+</div>
+
+

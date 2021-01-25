@@ -1,0 +1,52 @@
+<div class="container container-align">
+    <app-header></app-header>
+    <div class="row justify-content-center main-box">
+        <h1 class="display-4">INEA - Dados do Monitoramento da Qualidade do Ar e Meteorologia</h1>
+
+        <div class="jumbotron vertical-center text-center" style="background-color:#FDFEFE !important;">
+
+            <h3>Efetue login para iniciar uma nova sessão</h3>
+
+            <form [formGroup]="frmLogin" (ngSubmit)="submitForm()">
+
+                <div class="form-group has-feedback" style="margin-bottom: 0px;">
+                    <mat-form-field class="full-width " appearance="outline">
+                        <mat-label>Usuário</mat-label>
+                        <input type="text" matInput formControlName="login">
+                        <mat-icon matSuffix>account_circle</mat-icon>
+                        <mat-error
+                            *ngIf="frmLogin.get('login').hasError('required') && (frmLogin.get('login').touched || frmLogin.get('login').dirty)">
+                            * Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+                
+                <div class="form-group has-feedback">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Senha</mat-label>
+                        <input type="password" matInput  formControlName="senha">
+                        <mat-icon matSuffix>lock</mat-icon>
+                        <mat-error
+                        *ngIf="frmLogin.get('senha').hasError('required') && (frmLogin.get('senha').touched || frmLogin.get('senha').dirty)">
+                        * Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <p>Usuário e senha são os mesmos de acesso ao dos computadores INEA.</p>
+        
+                <hr class="my-4">
+        
+                <button class="btn btn-primary btn-lg" type="submit" role="button" [disabled]="isLoading">
+                    <mat-icon aria-hidden="false" class="icon-align" aria-label="login">login</mat-icon>
+                    Entrar
+                </button>
+
+                <mat-progress-bar mode="indeterminate" *ngIf="isLoading" style="margin-top:20px;"></mat-progress-bar>
+
+            </form>
+            
+        </div>
+    </div>  
+    
+    <br/>
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,52 @@
+.main-box {
+    margin-top: 30px;
+}
+
+.icon-align {
+    margin-top: 3px;
+    vertical-align: top;
+}
+
+.container-align {
+    position: relative; 
+    min-height: 95vh;
+}
+
+.jumbotron {
+    background-color: #F4F6F6;
+    border: 1px solid #EBEDEF;
+    padding: 1rem 2rem;
+}
+
+.display-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 30px;
+    margin-left: 5px;
+}
+
+.nvbuttons {
+    width: 100%;
+    padding-bottom: 2rem;
+    min-height: 200px;
+    min-height: 90px;
+    margin-top: 10px;
+}
+
+.lead {
+    font-weight:400; 
+    margin-top: 60px;
+    font-size: 40px;
+}
+
+.btn-lg {
+    margin-top: 5px;
+}
+
+mat-form-field {
+    margin-right: 12px;
+}
+
+/* .nvbuttons a {
+    float: left;
+} */
